@@ -1,0 +1,46 @@
+body {
+  background-color: #CCC;
+}
+
+h1 {
+  text-align: center;
+}
+
+.selections {
+  display: flex;
+  justify-content: center;
+}
+
+.selection {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.selection:hover {
+  transform: scale(1.2);
+  transition: 100ms;
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.result-you {
+  padding: 15px;
+  font-size: 2rem;
+}
+
+.result-pc {
+  padding: 15px;
+  font-size: 2rem;
+}
+
+.result-score {
+  margin-left: .3rem;
+  font-size: 1.5rem;
+}
