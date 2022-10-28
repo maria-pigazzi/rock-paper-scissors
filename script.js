@@ -1,32 +1,32 @@
-const selectionButtons = document.querySelectorAll('selection');
-
-selectionButtons.forEach(selectionButton => {
-  selectionButton.addEventListener('click', e => {
-    const playerSelection = selectionButton.selection
-    const computerSelection = computerPlay()
-    playRound(playerSelection, computerSelection)
-  })
-})
-
+const selectionButton = document.querySelectorAll(".selection");
+const options = ["rock", "paper", "scissors"];
 
 function computerPlay() {
-  const computerSelection = ["rock", "paper", "scissors"];
-  return computerSelection [Math.floor(Math.random() * computerSelection.length)];
+    const computerSelection = options[Math.floor(Math.random() * options.length)];
+    return computerSelection;
 };
+
+selectionButton.forEach(selectionButton => {
+  selectionButton.addEventListener("click", function() {
+    const playerSelection = selectionButton.selection;
+    const computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection)
+  });
+});
 
 function playRound(playerSelection, computerSelection) {
   if ((playerSelection === "rock" && computerSelection === "scissors")
   || (playerSelection === "paper" && computerSelection === "rock")
   || (playerSelection === "scissors" && computerSelection === "paper")) {
-    return  `You win! ${playerSelection} beats ${computerSelection}`;
-  } else if ((playerSelection === "rock" && computerSelection === "paper")
-  || (playerSelection === "paper" && computerSelection === "scissors")
-  || (playerSelection === "scissors" && computerSelection === "rock")) {
-    return `You lose! ${computerSelection} beats ${playerSelection}`;
+    alert(`You win! ${playerSelection} beats ${computerSelection}`);
   } else if (playerSelection === computerSelection) {
-    return "Looks like a draw!";
+    alert( "Looks like a draw!" );
+  } else  {
+    alert(`You lose! ${computerSelection} beats ${playerSelection}`);
   }
 };
+
+playRound();
 
 
 // Remove logic that plays 5 rounds
